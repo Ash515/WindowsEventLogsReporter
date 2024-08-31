@@ -1,0 +1,19 @@
+<nav>
+  <ul class="nav-list">
+    <li class="nav-item">{{#link-to 'index'}}Home{{/link-to}}</li>
+    <li class="nav-item">{{#link-to 'logs'}}LogBase{{/link-to}}</li>
+    
+    <button id="logout-button" {{action "logout"}}>Logout</button>
+  </ul>
+
+
+
+</nav>
+
+
+<h3 id="chart-title">Log Type Counts</h3>
+
+
+{{log-chart labels=model.labels counts=model.counts}}
+
+{{outlet}}

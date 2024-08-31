@@ -1,0 +1,12 @@
+<h2>Signup</h2>
+<form {{action 'signup' on='submit'}}>
+  <div>
+    <label for="username">Username</label>
+    <input type="text" id="username" {{input value=username}} />
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" id="password" {{input value=password}} />
+  </div>
+  <button type="submit">Signup</button>
+</form>

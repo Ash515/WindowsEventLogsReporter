@@ -1,0 +1,12 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form {{action "login" on="submit"}} class="login-form">
+    <label for="username">Username:</label>
+    <input type="text" id="username" value={{username}} oninput={{action (mut username) value="target.value"}} class="input-field">
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" value={{password}} oninput={{action (mut password) value="target.value"}} class="input-field">
+    
+    <button type="submit" class="submit-button">Login</button>
+  </form>
+</div>

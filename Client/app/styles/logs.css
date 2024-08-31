@@ -1,0 +1,163 @@
+Table styling
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    color: #333;
+    table-layout: fixed; 
+  }
+  
+ 
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word; 
+    word-break: break-all; 
+    overflow: hidden; 
+  }
+  
+ 
+  thead {
+    background-color: #f4f4f4;
+  }
+  
+  th {
+    background-color: #009879;
+    color: white;
+    text-align: center;
+  }
+
+  
+table td {
+  max-width: 200px; 
+  white-space: normal; 
+}
+
+  
+ 
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  
+  
+  caption {
+    font-size: 1.5em;
+    margin: 10px 0;
+    font-weight: bold;
+  }
+
+
+  
+
+
+
+table {
+    width: 100%;
+    table-layout: fixed; 
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  tbody{
+    font-family:Menlo, Monaco, 'Courier New', Courier, monospace;
+    
+  }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ddd;
+}
+
+.topbar label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+
+#sort-by {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+
+input[type="text"] {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+
+button {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+button:disabled {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+
+.controls-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Adjust the gap between elements as needed */
+  margin-bottom: 20px; /* Space below the controls */
+}
+
+.search-container,
+.pagination-controls,
+.page-size-controls {
+  display: flex;
+  align-items: center;
+}
+
+.search-container input {
+  margin-right: 10px; /* Space between input and button */
+}
+
+.pagination-controls label,
+.pagination-controls input,
+.pagination-controls button,
+.pagination-controls span {
+  margin-right: 10px; /* Space between pagination elements */
+}
+
+.page-size-controls label,
+.page-size-controls select {
+  margin-right: 10px; /* Space between label and select */
+}

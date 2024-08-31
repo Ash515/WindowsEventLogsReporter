@@ -1,0 +1,206 @@
+{{outlet}}
+{{!-- <nav>
+  <ul class="nav-list">
+    <li class="nav-item">{{#link-to 'index'}}Home{{/link-to}}</li>
+    <li class="nav-item">{{#link-to 'logs'}}LogBase{{/link-to}}</li>
+    
+    <button id="logout-button" {{action "logout"}}>Logout</button>
+  </ul>
+</nav>
+<div class="topbar">
+  <div>
+    <input type="text" value={{searchTerm}} placeholder="Search logs..." oninput={{action (mut searchTerm) value="target.value"}}>
+    <button {{action "searchLogs"}}>Search</button>
+  </div>
+
+  <div>
+    <label for="sort-by">Sort By:</label>
+    <select id="sort-by" onchange={{action "sortByField" value="target.value"}}>
+      <option value="">None</option>
+      <option value="EventCode">Event Code</option>
+      <option value="TimeGenerated">Time Generated</option>
+    </select>
+  </div>
+
+<div>
+  <label for="getrecords-by">Display Record:</label>
+  <select onchange={{action "changePerPage" value="target.value"}}>
+  <option value="10">10</option>
+  <option value="25">25</option>
+  <option value="50">50</option>
+  <option value="75">75</option>
+  <option value="100">100</option>
+  
+</select>
+</div>
+
+
+
+<div>
+  <label for="gotopage-by">Go to page:</label>
+  <input type="number" id="gotopage-by" min="1" max={{totalPages}} value={{inputPage}} oninput={{action (mut inputPage) value="target.value"}}>
+  <button {{action "goToPage" inputPage}}>GO</button>
+</div>
+
+  <div>
+   
+    <span>Page {{page}} of {{totalPages}}</span>
+    <button {{action "nextPage"}} disabled={{eq page totalPages}}>Next</button>
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Log Type</th>
+      <th>Event Code</th>
+      <th>Level Type</th>
+      <th>Source Name</th>
+      <th>Message</th>
+      <th>Time Generated</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each sortedLogs as |log|}}
+      <tr>
+        <td>{{log.Logfile}}</td>
+        <td>{{log.EventCode}}</td>
+        <td>{{log.Type}}</td>
+        <td>{{log.SourceName}}</td>
+        <td>{{log.Message}}</td>
+        <td>{{log.TimeGenerated}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table> --}}
+
+
+{{!-- Version 2 --}}
+
+
+{{!-- 
+<nav>
+  <ul class="nav-list">
+    <li class="nav-item">{{#link-to 'index'}}Home{{/link-to}}</li>
+    <li class="nav-item">{{#link-to 'logs'}}LogBase{{/link-to}}</li>
+    <button id="logout-button" {{action "logout"}}>Logout</button>
+  </ul>
+</nav>
+
+<h2>LogBase</h2>
+
+<div class="controls-container">
+    <div class="search-container">
+        <input type="text" placeholder="Search logs..." value={{searchTerm}} oninput={{action (mut searchTerm) value="target.value"}} />
+        <button {{action 'searchLogs'}}>Search</button>
+    </div>
+
+    <div class="pagination-controls">
+        <button {{action 'previousPage'}} disabled={{eq currentPage 1}}>Previous</button>
+        <label for="page-select">Go to Page:</label>
+        <input type="number" id="page-select" min="1" max={{totalPages}} value={{currentPage}} oninput={{action (mut currentPage) value="target.value"}} />
+        <button {{action 'goToPage' currentPage}}>Go</button>
+        <span> of {{totalPages}}</span>
+        <button {{action 'nextPage'}} disabled={{eq currentPage totalPages}}>Next</button>
+    </div>
+
+    <div class="page-size-controls">
+        <label for="page-size">Records per page:</label>
+        <select id="page-size" onchange={{action "setPageSize" value="target.value"}}>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+        </select>
+    </div>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Log Type</th>
+            <th>Event Code</th>
+            <th>Level</th>
+            <th>Source</th>
+            <th>Time Created</th>
+            <th>Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each logs as |log|}}
+            <tr>
+                <td>{{log.Type}}</td>
+                <td>{{log.EventCode}}</td>
+                <td>{{log.Logfile}}</td>
+                <td>{{log.SourceName}}</td>
+                <td>{{log.TimeGeneratedHumanReadable}}</td>
+                <td>{{log.Message}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table> --}}
+
+<nav>
+  <ul class="nav-list">
+    <li class="nav-item">{{#link-to 'index'}}Home{{/link-to}}</li>
+    <li class="nav-item">{{#link-to 'logs'}}LogBase{{/link-to}}</li>
+    
+    <button id="logout-button" {{action "logout"}}>Logout</button>
+  </ul>
+</nav>
+<div class="controls-container">
+    <div class="search-container">
+        <input type="text" placeholder="Search logs..." value={{searchTerm}} oninput={{action (mut searchTerm) value="target.value"}} />
+        <button {{action 'searchLogs'}}>Search</button>
+    </div>
+
+    <div class="sort-controls">
+        <label for="sort-field">Sort by:</label>
+        <select id="sort-field" onchange={{action "sortLogs" value="target.value"}}>
+            <option value="TimeGenerated">Time Generated</option>
+            <option value="EventCode">Event Code</option>
+        </select>
+    </div>
+
+    <div class="pagination-controls">
+        <button {{action 'previousPage'}} disabled={{eq currentPage 1}}>Previous</button>
+        <label for="page-select">Go to Page:</label>
+        <input type="number" id="page-select" min="1" max={{totalPages}} value={{currentPage}} oninput={{action (mut currentPage) value="target.value"}} />
+        <button {{action 'goToPage' currentPage}}>Go</button>
+        <span> of {{totalPages}}</span>
+        <button {{action 'nextPage'}} disabled={{eq currentPage totalPages}}>Next</button>
+    </div>
+
+    <div class="page-size-controls">
+        <label for="page-size">Records per page:</label>
+        <select id="page-size" onchange={{action "setPageSize" value="target.value"}}>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+        </select>
+    </div>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Log Type</th>
+            <th>Event Code</th>
+            <th>Level</th>
+            <th>Source</th>
+            <th>Time Created</th>
+            <th>Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each sortedLogs as |log|}}
+            <tr>
+                <td>{{log.Type}}</td>
+                <td>{{log.EventCode}}</td>
+                <td>{{log.Logfile}}</td>
+                <td>{{log.SourceName}}</td>
+                <td>{{log.TimeGeneratedHumanReadable}}</td>
+                <td>{{log.Message}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>

@@ -1,0 +1,44 @@
+@import url("./app-title.css");
+@import url("./logs.css");
+@import url("./log-chart.css");
+@import url("./index.css");
+@import url("./login.css");
+
+nav {
+    background-color: #f8f9fa;
+    padding: 10px; 
+  }
+  
+  .nav-list {
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+  }
+  
+  
+  .nav-item {
+    margin-right: 30px; 
+  }
+  
+  
+  .nav-item:last-child {
+    margin-right: 0;
+  }
+  
+  
+  .nav-item a {
+    text-decoration: none; 
+    color: #007bff; 
+    font-weight: bold; 
+  }
+  
+  .nav-item a:hover {
+    color: #0056b3; 
+  }
+  
+  #logout-button{
+    margin-left: 1250px;
+  }
+
+

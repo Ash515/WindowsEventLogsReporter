@@ -1,0 +1,13 @@
+#app-title-id {
+    color: white;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    padding-left: 20px;
+    padding-top: 5px;
+  }
+  
+  .title-bar {
+    background-color: rgb(103 7 7);
+    height: 50px;
+  }
+  
