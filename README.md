@@ -1,5 +1,5 @@
 # EventLogMonitor
 Windows Event Log Monitor Software 
 
-Contributor(s)
+Developer
 - Ashwin Kumar R
